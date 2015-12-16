@@ -29,6 +29,14 @@ class Enemy{
 	else {return false;}
 	}
 
+  boolean isCollideWithBullet()
+  {
+    if (isHit(this.x, this.y, this.enemyImg.width, this.enemyImg.height, bullet.x, bullet.y, bullet.bulletImg.width, bullet.bulletImg.height)){
+    return true;
+    }
+   else {return false;}
+  }
+
 	boolean isOutOfBorder()
 	{
     if (this.x > width){
