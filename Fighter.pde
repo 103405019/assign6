@@ -4,7 +4,8 @@ class Fighter{
 	int y = 0;
 	int type;
 	int speed = 5;
-
+  Bullet bullet;
+ // bullet = new Bullet(fighter.x, fighter.y);
 	int hp;
 	Fighter(int hp) {
 		this.fighterImg = loadImage("img/fighter.png");
@@ -32,7 +33,9 @@ class Fighter{
 	}
 
 	void shoot() {
-		
+  bullet = new Bullet(this.x, this.y);
+          bullet.move();
+          bullet.draw();
 	}
 
 	void move(int direct) {
