@@ -5,7 +5,7 @@ class Fighter{
 	int type;
 	int speed = 5;
   Bullet bullet;
- // bullet = new Bullet(fighter.x, fighter.y);
+ boolean shooting = false;
 	int hp;
 	Fighter(int hp) {
 		this.fighterImg = loadImage("img/fighter.png");
@@ -14,6 +14,11 @@ class Fighter{
 		this.type = FlightType.FIGHTER;
 		this.hp = hp;
 	}
+
+  void shoot() {
+  bullet = new Bullet(this.x, this.y);
+  shooting = true;
+  }
 
 	void draw() {
 		image(fighterImg, this.x, this.y);
@@ -30,12 +35,10 @@ class Fighter{
 		if (isMovingRight) {
 			this.move(Direction.RIGHT);	
 		}
-	}
-
-	void shoot() {
-  bullet = new Bullet(this.x, this.y);
-          bullet.move();
-          bullet.draw();
+       if(shooting){
+       bullet.move();
+       bullet.draw();
+       }
 	}
 
 	void move(int direct) {
