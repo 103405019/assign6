@@ -34,6 +34,7 @@ Background bg;
 FlameMgr flameMgr;
 Treasure treasure;
 HPDisplay hpDisplay;
+Bullet bullet;
 
 boolean isMovingUp;
 boolean isMovingDown;
@@ -52,6 +53,7 @@ void setup () {
 	treasure = new Treasure();
 	hpDisplay = new HPDisplay();
 	fighter = new Fighter(20);
+  bullet = new Bullet(fighter.x, fighter.y);
 }
 
 void draw()
