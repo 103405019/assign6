@@ -53,7 +53,7 @@ void setup () {
 	treasure = new Treasure();
 	hpDisplay = new HPDisplay();
 	fighter = new Fighter(20);
-  bullet = new Bullet(fighter.x, fighter.y);
+	//bullet = new Bullet(fighter.x, fighter.y);
 }
 
 void draw()
